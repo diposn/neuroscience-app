@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Flashcard = require('./models/flashcard.model.js')
+const User = require('./models/user.model.js')
 const app = express();
-const flashcardRoute = require('./routes/flashcard.route.js')
 
+const flashcardRoute = require('./routes/flashcard.route.js')
+const userRoute = require('./routes/user.route.js')
 
 
 // middleware
@@ -14,7 +16,7 @@ app.use(express.urlencoded({extended: false}));
 
 // routes
 app.use('/api/flashcards', flashcardRoute);
-
+app.use('/api/users', userRoute);
 
 
 
