@@ -1,21 +1,19 @@
 const express = require("express");
 const User = require("../models/user.model.js")
 const router = express.Router();
-const {getUsers, getUser, createUser, deleteUser} = require('../controllers/user.controller.js')
+const {getUsers, getUser, signupUser, deleteUser, loginUser} = require('../controllers/user.controller.js')
 
 router.get('/', getUsers);
 
-router.get('/:id', getUser);
+router.get('/:email', getUser);
 
 // post flashcard
-router.post('/', createUser);
+router.post('/signup', signupUser);
 
 // delete flashcard
-router.delete('/:id', deleteUser);
+router.delete('/:email', deleteUser);
 
-
-
-
+router.post('/login', loginUser);
 
 
 module.exports = router;

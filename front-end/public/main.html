@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroAcademy</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="flashcards-container">
+      <nav class="tabs">
+        <input type="radio" name="tabs" id="tab-study" class="tab-radio" checked>
+        <div class="tabs-list">
+          <label for="tab-study" class="tab-trigger">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+            Advanced Study
+          </label>
+        </div>
+      </nav>
+
+        <section id="advancedStudy">
+          <div class="header"> 
+            <h2>Flashcards</h2>
+            <button class="add-card-btn" id="add-card-btn" onclick="openModal('addCardModal')">+ Add Card</button>
+          </div>
+
+          <div class="flashcards-grid" id="flashcards-grid">
+            <!-- Flashcards will be dynamically added here -->
+          </div>
+
+        </section>
+
+    <!-- Modal for adding a flashcard -->
+    <div class="modal" id="addCardModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModalBtn" onclick="closeModal('addCardModal')">&times;</span>
+        <h3>Add Flashcard</h3>
+        <br>
+        <form id="flashcardForm">
+          <label for="term">Term</label>
+          <input type="text" id="term" name="term" required>
+
+          <label for="definition">Definition</label>
+          <textarea id="definition" name="definition" required></textarea>
+
+          <button type="submit">Add Card</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+
+
+</body>
+</html>
